@@ -1,0 +1,19 @@
+{
+    "name": "Calluna.Statistics.Persistence",
+    "rootNamespace": "Calluna.Statistics.Persistence",
+    "references": [
+        "GUID:fb92ad7c22f767448a052126eb8fa706",
+        "GUID:a2f15868a0d1eb14fa0bee2824165246",
+        "GUID:a4e2fcc097ca52d46a2cc62ef3c5e9bf",
+        "GUID:7c5e5a96450ad6a4c9f6767dd054cb02"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
