@@ -1,21 +1,17 @@
 {
-  "name": "com.calluna.template",
+  "name": "com.calluna.statistics.persistence",
   "version": "1.0.0",
-  "displayName": "Calluna Unity Package Template",
+  "displayName": "Calluna Unity Statistics Persistence",
   "description": "Package Description",
   "unity": "6000.33",
   "unityRelease": "",
-  "documentationUrl": "https://github.com/CallunaGames/CallunaUnityTemplate",
-  "changelogUrl": "https://github.com/CallunaGames/CallunaUnityTemplate/commits/v1.0.0",
+  "documentationUrl": "https://github.com/CallunaGames/CallunaUnityStatisticsPersistence",
+  "changelogUrl": "https://github.com/CallunaGames/CallunaUnityStatisticsPersistence/commits/v1.0.0",
   "licensesUrl": "",
   "dependencies": {
   },
   "samples": [
-    {
-      "displayName": "Sample Name",
-      "description": "Sample Description",
-      "path": "Samples~/Sample1"
-    }
+    
   ],
   "keywords": [
   ],
