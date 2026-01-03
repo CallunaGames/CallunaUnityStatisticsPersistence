@@ -1,5 +1,4 @@
-using System;
-using UnityEngine;
+using Calluna.Persistence;
 
 namespace Calluna.Statistics.Persistence
 {
@@ -15,15 +14,17 @@ namespace Calluna.Statistics.Persistence
         public override StatisticId Id => _entry.Id;
         
         private readonly StatisticsEntry<T> _entry;
+        private readonly JsonSerializer _serializer;
 
-        public EntryDataConverter(StatisticsEntry<T> entry)
+        public EntryDataConverter(StatisticsEntry<T> entry, JsonSerializer serializer)
         {
             _entry = entry;
+            _serializer = serializer;
         }
 
-        public StatisticsEntryData<T> ToConcreteData()
+        public StatisticsEntryData ToConcreteData()
         {
-            return new StatisticsEntryData<T>() { Id = _entry.Id.Id, Value = _entry.Value.Value };
+            return new StatisticsEntryData() { Id = _entry.Id.Id, Value = _serializer.Serialize(_entry.Value.Value) };
         }
 
         public override StatisticsEntryData ToData()
@@ -35,9 +36,7 @@ namespace Calluna.Statistics.Persistence
         {
             if (_entry.Id != data.Id)
                 return false;
-            if(data is not StatisticsEntryData<T> typedData)
-                throw new ArgumentException($"Data has invalid type. Expected generic type of {typeof(T)}. Actual {data.GetType()}");
-            _entry.Value.Value = typedData.Value;
+            _entry.Value.Value = _serializer.Deserialize<T>(data.Value);
             return true;
         }
     }
