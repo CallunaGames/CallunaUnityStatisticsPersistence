@@ -19,10 +19,10 @@ namespace Calluna.Statistics.Persistence
         public void AddConverter(EntryDataConverter converter)
         {
             _converters.Add(converter.Id.Id, converter);
-            if(_loadedData == null)
+            if (_loadedData == null)
                 return;
             StatisticsEntryData entryData = _loadedData.Entries.FirstOrDefault(d => d.Id == converter.Id.Id);
-            if(entryData != null)
+            if (entryData != null)
                 converter.TryLoad(entryData);
         }
 
@@ -40,16 +40,18 @@ namespace Calluna.Statistics.Persistence
 
         protected override StatisticsData GetDefaultData()
         {
-            return new StatisticsData();
+            return new StatisticsData() { Entries = new List<StatisticsEntryData>() };
         }
 
         protected override StatisticsData GetData()
         {
             List<StatisticsEntryData> entriesData = new List<StatisticsEntryData>();
+            
             foreach (EntryDataConverter converter in _converters.Values)
             {
                 entriesData.Add(converter.ToData());
             }
+
             return new StatisticsData() { Entries = entriesData };
         }
     }
