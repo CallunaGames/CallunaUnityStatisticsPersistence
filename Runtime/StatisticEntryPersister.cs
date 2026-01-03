@@ -6,12 +6,14 @@ namespace Calluna.Statistics.Persistence
     public abstract class StatisticEntryPersister<T> : MonoBehaviour, Injectable, Initializable
     {
         [SerializeField] private StatisticId _id;
+        
         private StatisticsPersistence _statisticsPersistence;
         private EntryDataConverterFactory _converterFactory;
         
         public void Inject(Resolver resolver)
         {
             _statisticsPersistence = resolver.Resolve<StatisticsPersistence>();
+            _converterFactory = resolver.Resolve<EntryDataConverterFactory>();
         }
 
         public void Initialize()

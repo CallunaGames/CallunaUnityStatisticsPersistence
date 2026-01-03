@@ -1,12 +1,12 @@
 {
   "name": "com.calluna.statistics.persistence",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Calluna Unity Statistics Persistence",
   "description": "Package Description",
   "unity": "6000.33",
   "unityRelease": "",
   "documentationUrl": "https://github.com/CallunaGames/CallunaUnityStatisticsPersistence",
-  "changelogUrl": "https://github.com/CallunaGames/CallunaUnityStatisticsPersistence/compare/v1.0.1...v1.0.2",
+  "changelogUrl": "https://github.com/CallunaGames/CallunaUnityStatisticsPersistence/compare/v1.0.2...v1.0.3",
   "licensesUrl": "",
   "dependencies": {
     "com.calluna.core": "1.0.6",
