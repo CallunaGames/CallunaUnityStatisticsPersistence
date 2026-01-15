@@ -7,9 +7,9 @@ namespace Calluna.Statistics.Persistence
         public abstract EntryDataConverter Create(Statistics statistics, StatisticId id, JsonSerializer serializer);
     }
     
-    public class EntryDataConverterCreator<T>
+    public class EntryDataConverterCreator<T> : EntryDataConverterCreator
     {
-        public EntryDataConverter Create(Statistics statistics, StatisticId id, JsonSerializer serializer)
+        public override EntryDataConverter Create(Statistics statistics, StatisticId id, JsonSerializer serializer)
         {
             StatisticsEntry<T> entry = statistics.GetOrCreateEntry<T>(id);
             return new EntryDataConverter<T>(entry, serializer);
