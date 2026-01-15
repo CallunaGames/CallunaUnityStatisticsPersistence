@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Calluna.Statistics.Persistence
 {
-    public abstract class StatisticEntryPersister<T> : MonoBehaviour, Injectable, Initializable
+    public class StatisticEntryPersister : MonoBehaviour, Injectable, Initializable
     {
         [SerializeField] private StatisticId _id;
         
@@ -18,7 +18,7 @@ namespace Calluna.Statistics.Persistence
 
         public void Initialize()
         {
-            _statisticsPersistence.AddConverter(_converterFactory.Create<T>(_id));
+            _statisticsPersistence.AddConverter(_converterFactory.Create(_id));
         }
     }
 }

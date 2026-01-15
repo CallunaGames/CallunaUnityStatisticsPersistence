@@ -1,4 +1,5 @@
-﻿using Calluna.DI;
+﻿using System;
+using Calluna.DI;
 using Calluna.Persistence;
 
 namespace Calluna.Statistics.Persistence
@@ -14,10 +15,11 @@ namespace Calluna.Statistics.Persistence
             _serializer = resolver.Resolve<JsonSerializer>();
         }
 
-        public EntryDataConverter<T> Create<T>(StatisticId statisticId)
+        public EntryDataConverter Create(StatisticId statisticId)
         {
-            StatisticsEntry<T> entry = _statistics.GetOrCreateEntry<T>(statisticId);
-            return new EntryDataConverter<T>(entry, _serializer);
+            Type creatorType = typeof(EntryDataConverterCreator<>).MakeGenericType(statisticId.Type.Type);
+            EntryDataConverterCreator creator = (EntryDataConverterCreator)Activator.CreateInstance(creatorType);
+            return creator.Create(_statistics, statisticId, _serializer);
         }
     }
 }
