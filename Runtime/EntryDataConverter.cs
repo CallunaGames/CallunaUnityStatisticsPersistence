@@ -24,7 +24,7 @@ namespace Calluna.Statistics.Persistence
 
         public StatisticsEntryData ToConcreteData()
         {
-            return new StatisticsEntryData() { Id = _entry.Id.Id, Value = _serializer.Serialize(_entry.Value.Value) };
+            return new StatisticsEntryData() { Id = _entry.Id.Id, Value = _serializer.SerializeToToken(_entry.Value.Value) };
         }
 
         public override StatisticsEntryData ToData()
