@@ -9,10 +9,10 @@
   "changelogUrl": "https://github.com/CallunaGames/CallunaUnityStatisticsPersistence/compare/v1.1.1...v1.1.2",
   "licensesUrl": "",
   "dependencies": {
-    "com.calluna.core": "1.0.12",
-    "com.calluna.di": "1.0.3",
-    "com.calluna.statistics": "1.1.0",
-    "com.calluna.persistence": "1.2.0"
+    "com.calluna.core": "https://github.com/CallunaGames/CallunaUnityCore.git#v1.2.0",
+    "com.calluna.di": "https://github.com/CallunaGames/CallunaUnityDI.git#v1.3.1",
+    "com.calluna.statistics": "https://github.com/CallunaGames/CallunaUnityStatistics.git#v1.2.0",
+    "com.calluna.persistence": "https://github.com/CallunaGames/CallunaUnityPersistence.git#v1.7.0"
   },
   "samples": [
     
